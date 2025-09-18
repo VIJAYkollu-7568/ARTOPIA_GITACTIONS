@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+D:\ArtGallery_backend\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1529924639.index
+2923031030.index
+603497557.index
+3114998328.index
+2867068762.index
+2757365461.index

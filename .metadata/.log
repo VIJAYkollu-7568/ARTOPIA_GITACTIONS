@@ -1,0 +1,937 @@
+!SESSION 2025-09-17 22:30:24.244 -----------------------------------------------
+eclipse.buildId=4.33.0.20240905-0613
+java.version=22.0.2
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -data D:\ArtGallery_backend
+
+!ENTRY org.eclipse.eclemma.core 4 0 2025-09-17 22:30:31.636
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.core [323]
+  Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.12,0.8.13)"
+    -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.12.202403310830"
+       org.jacoco.report [962]
+         Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.12,0.8.13)"
+           -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.12.202403310830"; version="0.8.12"; uses:="org.jacoco.core.internal.data"
+              org.jacoco.core [961]
+         Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.12,0.8.13)"
+           -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.12.202403310830"; version="0.8.12"; uses:="org.jacoco.core.data,org.objectweb.asm"
+         Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.12,0.8.13)"
+           -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.12.202403310830"; version="0.8.12"
+         Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.12,0.8.13)"
+           -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.12.202403310830"; version="0.8.12"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.12,0.8.13)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.12.202403310830"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.12.202403310830"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.12.202403310830"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.7.0)(!(version>=9.8.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.12.202403310830"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.7.0)(!(version>=9.8.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.7.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:493)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:2074)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:143)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2065)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2005)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1968)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1884)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:341)
+
+!ENTRY org.eclipse.eclemma.ui 4 0 2025-09-17 22:30:31.784
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.ui [325]
+  Unresolved requirement: Require-Bundle: org.eclipse.eclemma.core
+    -> Bundle-SymbolicName: org.eclipse.eclemma.core; bundle-version="3.1.9.202405260028"; singleton:="true"
+       org.eclipse.eclemma.core [323]
+         Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.12,0.8.13)"
+           -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.12.202403310830"
+              org.jacoco.report [962]
+                Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.12,0.8.13)"
+                  -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.12.202403310830"; version="0.8.12"; uses:="org.jacoco.core.internal.data"
+                     org.jacoco.core [961]
+                Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.12,0.8.13)"
+                  -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.12.202403310830"; version="0.8.12"; uses:="org.jacoco.core.data,org.objectweb.asm"
+                Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.12,0.8.13)"
+                  -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.12.202403310830"; version="0.8.12"
+                Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.12,0.8.13)"
+                  -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.12.202403310830"; version="0.8.12"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+         Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.12,0.8.13)"
+           -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.12.202403310830"
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.12,0.8.13)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.12.202403310830"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.12.202403310830"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.12.202403310830"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.7.0)(!(version>=9.8.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.12.202403310830"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.7.0)(!(version>=9.8.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.7.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:493)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:2074)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:143)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2065)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2005)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1968)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1884)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:341)
+
+!ENTRY ch.qos.logback.classic 1 0 2025-09-17 22:30:31.889
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-09-17 22:30:33.753
+!MESSAGE Logback config file: D:\ArtGallery_backend\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.6.1.20240411-1122.xml
+
+!ENTRY org.eclipse.ui 2 0 2025-09-17 22:30:34.346
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-09-17 22:30:34.346
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2025-09-17 22:30:34.793
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-09-17 22:30:34.793
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.egit.ui 2 0 2025-09-17 22:30:41.626
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\vijay'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2025-09-17 22:32:20.457
+!MESSAGE Class com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode does not have member field 'com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode ES6'
+!STACK 0
+java.lang.NoSuchFieldError: Class com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode does not have member field 'com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode ES6'
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.AddLibraryFileToIndex.indexFile(AddLibraryFileToIndex.java:251)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.AddLibraryFileToIndex.execute(AddLibraryFileToIndex.java:169)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2025-09-17 22:32:20.518
+!MESSAGE Class com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode does not have member field 'com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode ES6'
+!STACK 0
+java.lang.NoSuchFieldError: Class com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode does not have member field 'com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode ES6'
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.AddLibraryFileToIndex.indexFile(AddLibraryFileToIndex.java:251)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.AddLibraryFileToIndex.execute(AddLibraryFileToIndex.java:169)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2025-09-17 22:32:20.580
+!MESSAGE Class com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode does not have member field 'com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode ES6'
+!STACK 0
+java.lang.NoSuchFieldError: Class com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode does not have member field 'com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode ES6'
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.AddLibraryFileToIndex.indexFile(AddLibraryFileToIndex.java:251)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.AddLibraryFileToIndex.execute(AddLibraryFileToIndex.java:169)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2025-09-17 22:32:20.641
+!MESSAGE Class com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode does not have member field 'com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode ES6'
+!STACK 0
+java.lang.NoSuchFieldError: Class com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode does not have member field 'com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode ES6'
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.AddLibraryFileToIndex.indexFile(AddLibraryFileToIndex.java:251)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.AddLibraryFileToIndex.execute(AddLibraryFileToIndex.java:169)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2025-09-17 22:32:20.702
+!MESSAGE Class com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode does not have member field 'com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode ES6'
+!STACK 0
+java.lang.NoSuchFieldError: Class com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode does not have member field 'com.google.javascript.jscomp.parsing.parser.Parser$Config$Mode ES6'
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.AddLibraryFileToIndex.indexFile(AddLibraryFileToIndex.java:251)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.AddLibraryFileToIndex.execute(AddLibraryFileToIndex.java:169)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+
+!ENTRY org.eclipse.jface 2 0 2025-09-17 22:35:06.839
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2025-09-17 22:35:06.839
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolInWorkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolInWorkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 22:37:20.771
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 22:37:20.775
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 22:37:20.778
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 22:37:20.782
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 22:37:20.795
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 22:37:20.825
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-09-17 22:43:40.185
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-09-17 22:56:13.320
+!MESSAGE InterruptedException
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.operations.codeactions.LSPCodeActionMarkerResolution.checkMarkerResolution(LSPCodeActionMarkerResolution.java:159)
+	at org.eclipse.lsp4e.operations.codeactions.LSPCodeActionMarkerResolution.getResolutions(LSPCodeActionMarkerResolution.java:105)
+	at org.springframework.tooling.boot.ls.markers.LSPBootCodeActionMarkerResolution.getResolutions(LSPBootCodeActionMarkerResolution.java:25)
+	at org.eclipse.ui.internal.ide.registry.MarkerHelpRegistry.getResolutions(MarkerHelpRegistry.java:393)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.collectMarkerProposals(JavaCorrectionProcessor.java:318)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.collectProposals(JavaCorrectionProcessor.java:277)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.getMarkerAnnotationFixes(ProblemHover.java:154)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.computeCompletionProposals(ProblemHover.java:95)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.<init>(ProblemHover.java:74)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover.createAnnotationInfo(ProblemHover.java:178)
+	at org.eclipse.jdt.internal.ui.text.java.hover.AbstractAnnotationHover.getHoverInfo2(AbstractAnnotationHover.java:755)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 22:56:13.322
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 22:56:13.323
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 22:56:13.323
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 22:56:13.326
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 22:56:13.332
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 22:56:13.336
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:00:14.253
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:00:14.254
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:00:14.256
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:00:14.257
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:00:14.261
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:00:14.263
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:17:08.940
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:17:08.941
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:17:08.942
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:17:08.943
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:17:08.947
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:17:08.949
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-09-17 23:17:12.294
+!MESSAGE InterruptedException
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.operations.codeactions.LSPCodeActionMarkerResolution.checkMarkerResolution(LSPCodeActionMarkerResolution.java:159)
+	at org.eclipse.lsp4e.operations.codeactions.LSPCodeActionMarkerResolution.getResolutions(LSPCodeActionMarkerResolution.java:105)
+	at org.springframework.tooling.boot.ls.markers.LSPBootCodeActionMarkerResolution.getResolutions(LSPBootCodeActionMarkerResolution.java:25)
+	at org.eclipse.ui.internal.ide.registry.MarkerHelpRegistry.getResolutions(MarkerHelpRegistry.java:393)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.collectMarkerProposals(JavaCorrectionProcessor.java:318)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.collectProposals(JavaCorrectionProcessor.java:277)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.getMarkerAnnotationFixes(ProblemHover.java:154)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.computeCompletionProposals(ProblemHover.java:95)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.<init>(ProblemHover.java:74)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover.createAnnotationInfo(ProblemHover.java:178)
+	at org.eclipse.jdt.internal.ui.text.java.hover.AbstractAnnotationHover.getHoverInfo2(AbstractAnnotationHover.java:755)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:21:32.918
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:21:32.919
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:21:32.920
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:21:32.921
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:21:32.925
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-09-17 23:21:32.927
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-09-17 23:22:04.916
+!MESSAGE InterruptedException
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.operations.codeactions.LSPCodeActionMarkerResolution.checkMarkerResolution(LSPCodeActionMarkerResolution.java:159)
+	at org.eclipse.lsp4e.operations.codeactions.LSPCodeActionMarkerResolution.getResolutions(LSPCodeActionMarkerResolution.java:105)
+	at org.springframework.tooling.boot.ls.markers.LSPBootCodeActionMarkerResolution.getResolutions(LSPBootCodeActionMarkerResolution.java:25)
+	at org.eclipse.ui.internal.ide.registry.MarkerHelpRegistry.getResolutions(MarkerHelpRegistry.java:393)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.collectMarkerProposals(JavaCorrectionProcessor.java:318)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.collectProposals(JavaCorrectionProcessor.java:277)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.getMarkerAnnotationFixes(ProblemHover.java:154)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.computeCompletionProposals(ProblemHover.java:95)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.<init>(ProblemHover.java:74)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover.createAnnotationInfo(ProblemHover.java:178)
+	at org.eclipse.jdt.internal.ui.text.java.hover.AbstractAnnotationHover.getHoverInfo2(AbstractAnnotationHover.java:755)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-09-17 23:31:10.402
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-09-17 23:31:16.356
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+!SESSION 2025-09-18 16:53:46.259 -----------------------------------------------
+eclipse.buildId=4.33.0.20240905-0613
+java.version=22.0.2
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.eclemma.core 4 0 2025-09-18 16:53:52.370
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.core [323]
+  Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.12,0.8.13)"
+    -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.12.202403310830"
+       org.jacoco.report [962]
+         Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.12,0.8.13)"
+           -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.12.202403310830"; version="0.8.12"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+              org.jacoco.core [961]
+         Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.12,0.8.13)"
+           -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.12.202403310830"; version="0.8.12"
+         Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.12,0.8.13)"
+           -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.12.202403310830"; version="0.8.12"; uses:="org.jacoco.core.internal.data"
+         Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.12,0.8.13)"
+           -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.12.202403310830"; version="0.8.12"; uses:="org.jacoco.core.data,org.objectweb.asm"
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.12,0.8.13)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.12.202403310830"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.12.202403310830"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.12.202403310830"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.7.0)(!(version>=9.8.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.12.202403310830"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.7.0)(!(version>=9.8.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.7.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:493)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:2074)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:143)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2065)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2005)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1968)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1884)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:341)
+
+!ENTRY org.eclipse.eclemma.ui 4 0 2025-09-18 16:53:52.379
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.ui [325]
+  Unresolved requirement: Require-Bundle: org.eclipse.eclemma.core
+    -> Bundle-SymbolicName: org.eclipse.eclemma.core; bundle-version="3.1.9.202405260028"; singleton:="true"
+       org.eclipse.eclemma.core [323]
+         Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.12,0.8.13)"
+           -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.12.202403310830"
+              org.jacoco.report [962]
+                Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.12,0.8.13)"
+                  -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.12.202403310830"; version="0.8.12"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+                     org.jacoco.core [961]
+                Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.12,0.8.13)"
+                  -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.12.202403310830"; version="0.8.12"
+                Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.12,0.8.13)"
+                  -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.12.202403310830"; version="0.8.12"; uses:="org.jacoco.core.internal.data"
+                Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.12,0.8.13)"
+                  -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.12.202403310830"; version="0.8.12"; uses:="org.jacoco.core.data,org.objectweb.asm"
+         Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.12,0.8.13)"
+           -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.12.202403310830"
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.12,0.8.13)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.12.202403310830"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.12.202403310830"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.12.202403310830"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.7.0)(!(version>=9.8.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.12.202403310830"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.7.0)(!(version>=9.8.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.7.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.8.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:493)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:2074)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:143)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2065)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2005)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1968)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1884)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:341)
+
+!ENTRY ch.qos.logback.classic 1 0 2025-09-18 16:53:52.624
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-09-18 16:53:57.865
+!MESSAGE Logback config file: D:\ArtGallery_backend\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.6.1.20240411-1122.xml
+
+!ENTRY org.eclipse.ui 2 0 2025-09-18 16:53:59.018
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-09-18 16:53:59.018
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2025-09-18 16:53:59.872
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-09-18 16:53:59.872
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.egit.ui 2 0 2025-09-18 16:54:11.136
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\vijay'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.core.resources 4 1 2025-09-18 16:55:31.439
+!MESSAGE Core exception while retrieving the content description
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException(/ART_GALLERY/src/main/java/com/example/demo/controllers/Customer_controller.java)[368]: java.io.FileNotFoundException: D:\ArtGallery_backend\ART_GALLERY\src\main\java\com\example\demo\controllers\Customer_controller.java (The system cannot find the path specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:477)
+	at org.eclipse.core.internal.resources.ContentDescriptionManager$LazyFileInputStream.ensureOpened(ContentDescriptionManager.java:194)
+	at org.eclipse.core.internal.resources.ContentDescriptionManager$LazyFileInputStream.read(ContentDescriptionManager.java:211)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at org.eclipse.core.internal.content.LazyInputStream.loadBlock(LazyInputStream.java:147)
+	at org.eclipse.core.internal.content.LazyInputStream.ensureAvailable(LazyInputStream.java:86)
+	at org.eclipse.core.internal.content.LazyInputStream.read(LazyInputStream.java:170)
+	at org.eclipse.core.internal.content.Util.getByteOrderMark(Util.java:122)
+	at org.eclipse.core.internal.content.TextContentDescriber.describe(TextContentDescriber.java:46)
+	at org.eclipse.core.internal.content.ContentType.describe(ContentType.java:182)
+	at org.eclipse.core.internal.content.ContentType.internalGetDescriptionFor(ContentType.java:472)
+	at org.eclipse.core.internal.content.ContentTypeCatalog.getDescriptionFor(ContentTypeCatalog.java:419)
+	at org.eclipse.core.internal.content.ContentTypeCatalog.getDescriptionFor(ContentTypeCatalog.java:423)
+	at org.eclipse.core.internal.content.ContentTypeMatcher.getDescriptionFor(ContentTypeMatcher.java:82)
+	at org.eclipse.core.internal.resources.ContentDescriptionManager.readDescription(ContentDescriptionManager.java:515)
+	at org.eclipse.core.internal.resources.ContentDescriptionManager.getDescriptionFor(ContentDescriptionManager.java:399)
+	at org.eclipse.core.internal.resources.File.getContentDescription(File.java:329)
+	at org.eclipse.core.internal.propertytester.FilePropertyTester.testContentType(FilePropertyTester.java:104)
+	at org.eclipse.core.internal.propertytester.FilePropertyTester.test(FilePropertyTester.java:56)
+	at org.eclipse.core.internal.expressions.Property.test(Property.java:65)
+	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:107)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.internal.expressions.AdaptExpression.evaluate(AdaptExpression.java:121)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateOr(CompositeExpression.java:68)
+	at org.eclipse.core.expressions.OrExpression.evaluate(OrExpression.java:26)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.expressions.WithExpression.evaluate(WithExpression.java:84)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.expressions.AndExpression.evaluate(AndExpression.java:36)
+	at org.eclipse.ui.internal.texteditor.codemining.CodeMiningProviderDescriptor.matches(CodeMiningProviderDescriptor.java:189)
+	at org.eclipse.ui.internal.texteditor.codemining.CodeMiningProviderRegistry.getProviders(CodeMiningProviderRegistry.java:110)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.installCodeMiningProviders(AbstractTextEditor.java:4030)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.installCodeMiningProviders(JavaEditor.java:4283)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.initializeSourceViewer(AbstractTextEditor.java:4020)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.createPartControl(AbstractTextEditor.java:3481)
+	at org.eclipse.ui.texteditor.StatusTextEditor.createPartControl(StatusTextEditor.java:64)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.createPartControl(AbstractDecoratedTextEditor.java:466)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.createPartControl(JavaEditor.java:3105)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.createPartControl(CompilationUnitEditor.java:1526)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.createPartControl(CompatibilityPart.java:158)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor.createPartControl(CompatibilityEditor.java:96)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:365)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:977)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:939)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:139)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:386)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:312)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:203)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:90)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:59)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:132)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:991)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:727)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:711)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.lambda$0(PartServiceImpl.java:105)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.lambda$0(UIEventHandler.java:38)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:183)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4855)
+	at org.eclipse.e4.ui.workbench.swt.DisplayUISynchronize.syncExec(DisplayUISynchronize.java:34)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:38)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:206)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:201)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:131)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:73)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:60)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElementGen(ElementContainerImpl.java:168)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElement(ElementContainerImpl.java:187)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1391)
+	at org.eclipse.ui.internal.WorkbenchPage.hidePart(WorkbenchPage.java:1540)
+	at org.eclipse.ui.internal.WorkbenchPage.hidePart(WorkbenchPage.java:1492)
+	at org.eclipse.ui.internal.WorkbenchPage.closeEditors(WorkbenchPage.java:1462)
+	at org.eclipse.ui.internal.WorkbenchPage.closeEditor(WorkbenchPage.java:1584)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.lambda$3(AbstractTextEditor.java:4282)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4099)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3715)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2025-09-18 16:55:31.443
+!MESSAGE File not found: /ART_GALLERY/src/main/java/com/example/demo/controllers/Customer_controller.java.
+!STACK 0
+java.io.FileNotFoundException: D:\ArtGallery_backend\ART_GALLERY\src\main\java\com\example\demo\controllers\Customer_controller.java (The system cannot find the path specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:477)
+	at org.eclipse.core.internal.resources.ContentDescriptionManager$LazyFileInputStream.ensureOpened(ContentDescriptionManager.java:194)
+	at org.eclipse.core.internal.resources.ContentDescriptionManager$LazyFileInputStream.read(ContentDescriptionManager.java:211)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at org.eclipse.core.internal.content.LazyInputStream.loadBlock(LazyInputStream.java:147)
+	at org.eclipse.core.internal.content.LazyInputStream.ensureAvailable(LazyInputStream.java:86)
+	at org.eclipse.core.internal.content.LazyInputStream.read(LazyInputStream.java:170)
+	at org.eclipse.core.internal.content.Util.getByteOrderMark(Util.java:122)
+	at org.eclipse.core.internal.content.TextContentDescriber.describe(TextContentDescriber.java:46)
+	at org.eclipse.core.internal.content.ContentType.describe(ContentType.java:182)
+	at org.eclipse.core.internal.content.ContentType.internalGetDescriptionFor(ContentType.java:472)
+	at org.eclipse.core.internal.content.ContentTypeCatalog.getDescriptionFor(ContentTypeCatalog.java:419)
+	at org.eclipse.core.internal.content.ContentTypeCatalog.getDescriptionFor(ContentTypeCatalog.java:423)
+	at org.eclipse.core.internal.content.ContentTypeMatcher.getDescriptionFor(ContentTypeMatcher.java:82)
+	at org.eclipse.core.internal.resources.ContentDescriptionManager.readDescription(ContentDescriptionManager.java:515)
+	at org.eclipse.core.internal.resources.ContentDescriptionManager.getDescriptionFor(ContentDescriptionManager.java:399)
+	at org.eclipse.core.internal.resources.File.getContentDescription(File.java:329)
+	at org.eclipse.core.internal.propertytester.FilePropertyTester.testContentType(FilePropertyTester.java:104)
+	at org.eclipse.core.internal.propertytester.FilePropertyTester.test(FilePropertyTester.java:56)
+	at org.eclipse.core.internal.expressions.Property.test(Property.java:65)
+	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:107)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.internal.expressions.AdaptExpression.evaluate(AdaptExpression.java:121)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateOr(CompositeExpression.java:68)
+	at org.eclipse.core.expressions.OrExpression.evaluate(OrExpression.java:26)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.expressions.WithExpression.evaluate(WithExpression.java:84)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.expressions.AndExpression.evaluate(AndExpression.java:36)
+	at org.eclipse.ui.internal.texteditor.codemining.CodeMiningProviderDescriptor.matches(CodeMiningProviderDescriptor.java:189)
+	at org.eclipse.ui.internal.texteditor.codemining.CodeMiningProviderRegistry.getProviders(CodeMiningProviderRegistry.java:110)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.installCodeMiningProviders(AbstractTextEditor.java:4030)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.installCodeMiningProviders(JavaEditor.java:4283)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.initializeSourceViewer(AbstractTextEditor.java:4020)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.createPartControl(AbstractTextEditor.java:3481)
+	at org.eclipse.ui.texteditor.StatusTextEditor.createPartControl(StatusTextEditor.java:64)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.createPartControl(AbstractDecoratedTextEditor.java:466)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.createPartControl(JavaEditor.java:3105)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.createPartControl(CompilationUnitEditor.java:1526)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.createPartControl(CompatibilityPart.java:158)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor.createPartControl(CompatibilityEditor.java:96)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:365)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:977)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:939)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:139)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:386)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:312)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:203)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:90)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:59)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:132)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:991)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:727)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:711)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.lambda$0(PartServiceImpl.java:105)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.lambda$0(UIEventHandler.java:38)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:183)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4855)
+	at org.eclipse.e4.ui.workbench.swt.DisplayUISynchronize.syncExec(DisplayUISynchronize.java:34)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:38)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:206)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:201)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:131)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:73)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:60)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElementGen(ElementContainerImpl.java:168)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElement(ElementContainerImpl.java:187)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1391)
+	at org.eclipse.ui.internal.WorkbenchPage.hidePart(WorkbenchPage.java:1540)
+	at org.eclipse.ui.internal.WorkbenchPage.hidePart(WorkbenchPage.java:1492)
+	at org.eclipse.ui.internal.WorkbenchPage.closeEditors(WorkbenchPage.java:1462)
+	at org.eclipse.ui.internal.WorkbenchPage.closeEditor(WorkbenchPage.java:1584)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.lambda$3(AbstractTextEditor.java:4282)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4099)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3715)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2025-09-18 16:55:32.591
+!MESSAGE File not found: D:\ArtGallery_backend\ART_GALLERY\pom.xml.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException(/ART_GALLERY/pom.xml)[368]: org.eclipse.core.runtime.CoreException: File not found: D:\ArtGallery_backend\ART_GALLERY\pom.xml.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:32)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.handleReadIOException(LocalFile.java:498)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:479)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:881)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:344)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:334)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:589)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:491)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:370)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:322)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:146)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.lambda$0(MavenBuilder.java:84)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:83)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:192)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:1077)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:296)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:352)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:441)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:444)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:555)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:503)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:585)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:207)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:300)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.FileNotFoundException: D:\ArtGallery_backend\ART_GALLERY\pom.xml (The system cannot find the path specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:477)
+	... 27 more
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2025-09-18 16:55:32.592
+!MESSAGE File not found: D:\ArtGallery_backend\ART_GALLERY\pom.xml.
+!STACK 1
+org.eclipse.core.runtime.CoreException: File not found: D:\ArtGallery_backend\ART_GALLERY\pom.xml.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:32)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.handleReadIOException(LocalFile.java:498)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:479)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:881)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:344)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:334)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:589)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:491)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:370)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:322)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:146)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.lambda$0(MavenBuilder.java:84)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:83)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:192)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:1077)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:296)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:352)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:441)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:444)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:555)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:503)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:585)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:207)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:300)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.FileNotFoundException: D:\ArtGallery_backend\ART_GALLERY\pom.xml (The system cannot find the path specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:477)
+	... 27 more
+!SUBENTRY 2 org.eclipse.core.filesystem 4 269 2025-09-18 16:55:32.593
+!MESSAGE File not found: D:\ArtGallery_backend\ART_GALLERY\pom.xml.
+!STACK 0
+java.io.FileNotFoundException: D:\ArtGallery_backend\ART_GALLERY\pom.xml (The system cannot find the path specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:477)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:881)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:344)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:334)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:589)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:491)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:370)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:322)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:146)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.lambda$0(MavenBuilder.java:84)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:83)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:192)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:1077)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:296)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:352)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:441)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:444)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:555)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:503)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:585)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:207)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:300)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jface 2 0 2025-09-18 16:55:32.603
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2025-09-18 16:55:32.603
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolInWorkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolInWorkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui.ide 4 4 2025-09-18 16:55:36.130
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 2 1 2025-09-18 16:55:36.139
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2025-09-18 16:55:36.139
+!MESSAGE The project description file (.project) for 'ART_GALLERY' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.eclipse.core.resources 2 10035 2025-09-18 16:55:38.456
+!MESSAGE The workspace will exit with unsaved changes in this session.

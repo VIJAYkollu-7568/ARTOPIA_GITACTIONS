@@ -1,0 +1,32 @@
+package com.example.demo.controllers;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.*;
+
+import com.example.demo.models.Admin_details;
+import com.example.demo.repos.Admin_repo;
+
+@RestController
+@RequestMapping("/admin")
+public class Admin_controller {
+
+    @Autowired
+    private Admin_repo adminRepo;
+
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+
+    @PostMapping("/signup")
+    public ResponseEntity<String> signup(@RequestBody Admin_details admin) {
+        if(adminRepo.findByUsername(admin.getUsername()).isPresent()) {
+            return ResponseEntity.badRequest().body("Username already exists");
+        }
+
+        admin.setPassword(passwordEncoder.encode(admin.getPassword()));
+        adminRepo.save(admin);
+        return ResponseEntity.ok("Signup successful");
+    }
+}

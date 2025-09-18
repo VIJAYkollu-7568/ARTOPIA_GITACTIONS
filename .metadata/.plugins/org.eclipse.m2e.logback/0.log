@@ -1,0 +1,232 @@
+2025-09-17 22:30:41,339 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-09-17 22:32:12,214 [Worker-34: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.example:ART_GALLERY:0.0.1-SNAPSHOT @ D:\ArtGallery_backend\ART_GALLERY\pom.xml.
+2025-09-17 22:32:13,951 [Worker-34: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ART_GALLERY/src/main/java
+2025-09-17 22:32:13,954 [Worker-34: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ART_GALLERY/src/main/resources
+2025-09-17 22:32:13,964 [Worker-34: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ART_GALLERY/src/main/resources
+2025-09-17 22:32:13,972 [Worker-34: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ART_GALLERY/src/test/java
+2025-09-17 22:32:13,974 [Worker-34: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ART_GALLERY/src/test/resources
+2025-09-17 22:32:17,027 [Worker-34: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 7 sec
+2025-09-17 22:32:17,031 [Worker-34: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2025-09-17 22:32:17,495 [Worker-34: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.example:ART_GALLERY:0.0.1-SNAPSHOT @ D:\ArtGallery_backend\ART_GALLERY\pom.xml.
+2025-09-17 22:32:18,420 [Worker-34: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ART_GALLERY/src/main/java
+2025-09-17 22:32:18,421 [Worker-34: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ART_GALLERY/src/main/resources
+2025-09-17 22:32:18,422 [Worker-34: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ART_GALLERY/src/main/resources
+2025-09-17 22:32:18,423 [Worker-34: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ART_GALLERY/src/test/java
+2025-09-17 22:32:18,424 [Worker-34: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ART_GALLERY/src/test/resources
+2025-09-17 22:32:19,768 [Worker-34: Import Getting Started Content] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ART_GALLERY
+2025-09-17 22:32:19,787 [Worker-34: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 1.00 sec, update config takes 1.00 sec 
+2025-09-17 22:32:20,824 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:32:20,880 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:32:20,886 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:32:20,887 [Worker-2: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ART_GALLERY
+2025-09-17 22:32:20,889 [Worker-2: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ART_GALLERY
+2025-09-17 22:33:05,282 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:33:05,291 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:33:05,299 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:33:12,579 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:33:12,589 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:33:12,600 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:33:26,473 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:33:26,480 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:33:26,494 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:33:37,173 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:33:37,183 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:33:37,188 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:33:48,055 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:33:48,077 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:33:48,082 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:35:42,192 [Worker-2: Launching ART_GALLERY - ArtGalleryApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:35:42,205 [Worker-2: Launching ART_GALLERY - ArtGalleryApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:35:42,211 [Worker-2: Launching ART_GALLERY - ArtGalleryApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:37:43,087 [Worker-29: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.example:ART_GALLERY:0.0.1-SNAPSHOT @ D:\ArtGallery_backend\ART_GALLERY\pom.xml.
+2025-09-17 22:37:44,334 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:37:44,335 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:37:44,342 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:37:44,342 [Worker-29: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ART_GALLERY
+2025-09-17 22:37:44,343 [Worker-29: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ART_GALLERY
+2025-09-17 22:37:44,867 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:37:44,944 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:37:44,949 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:39:20,096 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:39:20,102 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:39:20,106 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:41:18,569 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:41:18,588 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:41:18,594 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:42:14,445 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:42:14,453 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:42:14,456 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:42:44,055 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:42:44,064 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:42:44,066 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:43:07,788 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:43:07,795 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:43:07,797 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:43:14,830 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:43:14,844 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:43:14,846 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:43:52,588 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:43:52,593 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:43:52,596 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:45:22,157 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:45:22,161 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:45:22,163 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:48:15,450 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:48:15,458 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:48:15,461 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:49:47,693 [Worker-40: Launching ART_GALLERY - ArtGalleryApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:49:47,701 [Worker-40: Launching ART_GALLERY - ArtGalleryApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:49:47,704 [Worker-40: Launching ART_GALLERY - ArtGalleryApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:50:22,942 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:50:22,951 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:50:22,954 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:50:40,061 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:50:40,067 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:50:40,070 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:51:44,782 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:51:44,788 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:51:44,790 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:51:58,064 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:51:58,070 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:51:58,072 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:52:59,540 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:52:59,546 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:52:59,548 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:54:23,048 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:54:23,056 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:54:23,059 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:54:31,600 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:54:31,606 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:54:31,609 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:55:07,954 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:55:07,960 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:55:07,961 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:55:13,106 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:55:13,111 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:55:13,113 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:56:22,709 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:56:22,713 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:56:22,715 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:58:01,034 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:58:01,047 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:58:01,049 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:58:51,436 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:58:51,449 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:58:51,451 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:59:14,413 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:59:14,421 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:59:14,426 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 22:59:43,066 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 22:59:43,074 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 22:59:43,075 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:00:47,930 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:00:47,937 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:00:47,938 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:00:53,126 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:00:53,136 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:00:53,138 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:02:04,161 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:02:04,166 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:02:04,168 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:03:16,173 [Worker-44: Launching ART_GALLERY - ArtGalleryApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:03:16,179 [Worker-44: Launching ART_GALLERY - ArtGalleryApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:03:16,182 [Worker-44: Launching ART_GALLERY - ArtGalleryApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:05:51,376 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:05:51,386 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:05:51,388 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:08:38,523 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:08:38,528 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:08:38,530 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:09:37,722 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:09:37,731 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:09:37,732 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:09:53,037 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:09:53,046 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:09:53,049 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:10:55,039 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:10:55,047 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:10:55,049 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:13:56,941 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:13:56,947 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:13:56,949 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:17:16,719 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:17:16,726 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:17:16,727 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:17:35,357 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:17:35,364 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:17:35,366 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:18:57,299 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:18:57,304 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:18:57,305 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:21:34,085 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:21:34,097 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:21:34,101 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:25:23,738 [Worker-51: Launching ART_GALLERY - ArtGalleryApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:25:23,744 [Worker-51: Launching ART_GALLERY - ArtGalleryApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:25:23,746 [Worker-51: Launching ART_GALLERY - ArtGalleryApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:26:32,014 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:26:32,020 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:26:32,022 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:28:16,612 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:28:16,618 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:28:16,621 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:28:33,688 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:28:33,694 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:28:33,697 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:28:53,312 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:28:53,317 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:28:53,318 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:29:20,807 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:29:20,811 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:29:20,813 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:31:39,759 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:31:39,763 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:31:39,765 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:35:07,897 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:35:07,903 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:35:07,904 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-17 23:36:07,593 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-17 23:36:07,603 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-17 23:36:07,605 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\ArtGallery_backend\ART_GALLERY\src\test\resources
+2025-09-18 16:54:10,796 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-09-18 16:55:32,577 [Worker-28: Building] ERROR o.e.m.c.i.p.r.ProjectRegistryManager - File not found: D:\ArtGallery_backend\ART_GALLERY\pom.xml.
+org.eclipse.core.internal.resources.ResourceException: File not found: D:\ArtGallery_backend\ART_GALLERY\pom.xml.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:886)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:344)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:334)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:589)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:491)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:370)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:322)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:146)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.lambda$0(MavenBuilder.java:84)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:83)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:192)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:1077)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:296)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:352)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:441)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:444)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:555)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:503)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:585)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:207)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:300)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.core.runtime.CoreException: File not found: D:\ArtGallery_backend\ART_GALLERY\pom.xml.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:32)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.handleReadIOException(LocalFile.java:498)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:479)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:881)
+	... 26 common frames omitted
+Caused by: java.io.FileNotFoundException: D:\ArtGallery_backend\ART_GALLERY\pom.xml (The system cannot find the path specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:477)
+	... 27 common frames omitted
