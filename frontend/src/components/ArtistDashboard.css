@@ -16,7 +16,7 @@ html, body, #root {
   background: #6483b1; /* unified with dashboard background */
   overflow: hidden; /* prevent unexpected scroll causing white gaps */
 }
-
+/*fnfwiewh*/
 /* Dashboard Layout */
 .artist-dashboard {
   display: flex;
