@@ -1,0 +1,275 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure everything fills the screen */
+html, body, #root {
+   height: 100vh;
+  width: 100vw;
+   
+  position: fixed;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  background: #6483b1; /* unified with dashboard background */
+  overflow: hidden; /* prevent unexpected scroll causing white gaps */
+}
+
+/* Dashboard Layout */
+.artist-dashboard {
+  display: flex;
+  position: fixed;  /* cover full screen */
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #1f4037, #99f2c8);
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Sidebar Header */
+.sidebar h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nav-link {
+  background: transparent;
+  border: none;
+  padding: 10px 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  text-align: left;
+  transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.03);
+}
+
+/* Sidebar Bottom */
+.sidebar-bottom {
+  margin-top: 20px;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.profile-info .name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.profile-info .role {
+  font-size: 12px;
+  color: #f1f1f1;
+}
+
+.logout-btn {
+  width: 100%;
+  background: #e74c3c;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.logout-btn:hover {
+  background: #c0392b;
+  transform: scale(1.03);
+}
+
+/* Main Dashboard Area */
+.dashboard-main {
+  flex: 1;
+  padding: 25px;
+  overflow-y: auto;
+  background: #f4f6f9;
+  height: 100%;
+}
+
+.dashboard-main h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* My Articles Section */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.article-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+}
+
+.article-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #0077b6;
+}
+
+.article-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+/* Article Actions */
+.article-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.edit-btn {
+  background: #0077b6;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background: #023e8a;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+/* Upload Form Section */
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+}
+
+.upload-form input,
+.upload-form textarea {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  resize: none;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.upload-form input:focus,
+.upload-form textarea:focus {
+  border: 1px solid #0077b6;
+}
+
+.upload-btn {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #27ae60;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.upload-btn:hover {
+  background: #219150;
+  transform: scale(1.03);
+}
+
+/* Profile Section */
+.profile-section {
+  max-width: 400px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.profile-section h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0077b6;
+  margin-bottom: 12px;
+}
+
+.profile-section p {
+  font-size: 1rem;
+  margin: 6px 0;
+  color: #333;
+}
+
+/* Scrollbar Styling */
+.dashboard-main::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dashboard-main::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 6px;
+}
+
+.dashboard-main::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
