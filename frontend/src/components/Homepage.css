@@ -266,6 +266,7 @@ html, body {
 .brand {
   font-size: 1.5rem;
   color: #023e8a;
+  /*color is for giving color og the field*/
 }
 
 /* Main Button */
