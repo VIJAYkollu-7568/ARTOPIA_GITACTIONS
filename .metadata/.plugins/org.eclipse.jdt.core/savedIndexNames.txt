@@ -1,4 +1,0 @@
-INDEX VERSION 1.134+D:\ArtGallery_backend\.metadata\.plugins\org.eclipse.jdt.core
-2923031030.index
-3413270776.index
-1865797976.index

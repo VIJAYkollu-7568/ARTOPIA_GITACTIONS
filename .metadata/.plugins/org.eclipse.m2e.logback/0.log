@@ -230,3 +230,4 @@ Caused by: java.io.FileNotFoundException: D:\ArtGallery_backend\ART_GALLERY\pom.
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
 	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:477)
 	... 27 common frames omitted
+2025-09-18 23:13:30,706 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
