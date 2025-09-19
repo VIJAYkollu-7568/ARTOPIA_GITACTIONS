@@ -1,73 +1,110 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ Import navigation hook
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./ArtistDashboard.css";
 
 const ArtistDashboard = () => {
-  const [activeSection, setActiveSection] = useState("articles");
-  const navigate = useNavigate(); // ✅ Initialize navigate
+  const [activeSection, setActiveSection] = useState("allPosts");
+  const navigate = useNavigate();
 
-  // Dummy articles data
-  const [articles, setArticles] = useState([
-    { id: 1, title: "The Beauty of Abstract Art", content: "Abstract art brings imagination alive..." },
-    { id: 2, title: "Color Theory in Modern Painting", content: "Artists use colors to create emotions..." },
+  // ✅ Fetch logged-in user details (dummy or from localStorage/sessionStorage)
+  const [user, setUser] = useState({ name: "John Doe", role: "Artist" });
+
+  useEffect(() => {
+    const savedUser = JSON.parse(localStorage.getItem("user"));
+    if (savedUser) {
+      setUser(savedUser);
+    }
+  }, []);
+
+  // Dummy data
+  const [posts, setPosts] = useState([
+    {
+      id: 1,
+      title: "The Beauty of Abstract Art",
+      content: "Abstract art brings imagination alive...",
+    },
+    {
+      id: 2,
+      title: "Color Theory in Modern Painting",
+      content: "Artists use colors to create emotions...",
+    },
   ]);
 
-  // Handle delete
-  const handleDelete = (id) => {
-    setArticles(articles.filter((article) => article.id !== id));
-  };
+  const [customers] = useState([
+    { id: 1, name: "Alice", purchases: 5 },
+    { id: 2, name: "Bob", purchases: 2 },
+  ]);
 
-  // Handle edit (simple alert for demo)
-  const handleEdit = (id) => {
-    const article = articles.find((a) => a.id === id);
-    alert(`Edit article: ${article.title}`);
-  };
+  const [artists] = useState([
+    { id: 1, name: "David", style: "Abstract" },
+    { id: 2, name: "Sophia", style: "Realism" },
+  ]);
 
-  // Handle upload
-  const [newArticle, setNewArticle] = useState({ title: "", content: "" });
+  // Upload state
+  const [newPost, setNewPost] = useState({ title: "", content: "" });
 
   const handleUpload = () => {
-    if (newArticle.title && newArticle.content) {
-      setArticles([
-        ...articles,
-        { id: Date.now(), title: newArticle.title, content: newArticle.content },
+    if (newPost.title && newPost.content) {
+      setPosts([
+        ...posts,
+        { id: Date.now(), title: newPost.title, content: newPost.content },
       ]);
-      setNewArticle({ title: "", content: "" });
-      setActiveSection("articles"); // go back to articles list
+      setNewPost({ title: "", content: "" });
+      setActiveSection("allPosts");
     } else {
       alert("Please fill out all fields!");
     }
   };
 
-  // ✅ Handle Logout → Redirect to homepage
+  // Logout
   const handleLogout = () => {
-    // Optionally clear auth/session storage here
-    navigate("/"); // Redirect to homepage
+    localStorage.removeItem("user"); // clear user
+    navigate("/"); // redirect
   };
 
-  // Render content based on active section
+  // Render sections
   const renderSection = () => {
     switch (activeSection) {
-      case "articles":
+      case "customers":
         return (
           <div>
-            <h2>My Articles</h2>
+            <h2>My Customers</h2>
+            <ul>
+              {customers.map((c) => (
+                <li key={c.id}>
+                  {c.name} – Purchases: {c.purchases}
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+
+      case "artists":
+        return (
+          <div>
+            <h2>My Artists</h2>
+            <ul>
+              {artists.map((a) => (
+                <li key={a.id}>
+                  {a.name} – Style: {a.style}
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+
+      case "allPosts":
+        return (
+          <div>
+            <h2>All Posts</h2>
             <div className="articles-grid">
-              {articles.map((article) => (
-                <div key={article.id} className="article-card">
-                  <h3>{article.title}</h3>
-                  <p>{article.content}</p>
-                  <div className="article-actions">
-                    <button onClick={() => handleEdit(article.id)} className="edit-btn">
-                      Edit
-                    </button>
-                    <button onClick={() => handleDelete(article.id)} className="delete-btn">
-                      Delete
-                    </button>
-                  </div>
+              {posts.map((p) => (
+                <div key={p.id} className="article-card">
+                  <h3>{p.title}</h3>
+                  <p>{p.content}</p>
                 </div>
               ))}
-              {articles.length === 0 && <p>No articles yet. Upload one!</p>}
+              {posts.length === 0 && <p>No posts yet. Upload one!</p>}
             </div>
           </div>
         );
@@ -75,18 +112,22 @@ const ArtistDashboard = () => {
       case "upload":
         return (
           <div>
-            <h2>Upload Article</h2>
+            <h2>Upload Post</h2>
             <div className="upload-form">
               <input
                 type="text"
-                placeholder="Article Title"
-                value={newArticle.title}
-                onChange={(e) => setNewArticle({ ...newArticle, title: e.target.value })}
+                placeholder="Post Title"
+                value={newPost.title}
+                onChange={(e) =>
+                  setNewPost({ ...newPost, title: e.target.value })
+                }
               />
               <textarea
-                placeholder="Article Content"
-                value={newArticle.content}
-                onChange={(e) => setNewArticle({ ...newArticle, content: e.target.value })}
+                placeholder="Post Content"
+                value={newPost.content}
+                onChange={(e) =>
+                  setNewPost({ ...newPost, content: e.target.value })
+                }
               ></textarea>
               <button onClick={handleUpload} className="upload-btn">
                 Upload
@@ -104,19 +145,37 @@ const ArtistDashboard = () => {
     <div className="artist-dashboard">
       {/* Sidebar */}
       <aside className="sidebar">
-        <h1>Artist Dashboard</h1>
+        <h1>Dashboard</h1>
         <nav className="nav-links">
           <button
-            className={`nav-link ${activeSection === "articles" ? "active" : ""}`}
-            onClick={() => setActiveSection("articles")}
+            className={`nav-link ${
+              activeSection === "customers" ? "active" : ""
+            }`}
+            onClick={() => setActiveSection("customers")}
           >
-            My Articles
+            My Customers
+          </button>
+          <button
+            className={`nav-link ${
+              activeSection === "artists" ? "active" : ""
+            }`}
+            onClick={() => setActiveSection("artists")}
+          >
+            My Artists
+          </button>
+          <button
+            className={`nav-link ${
+              activeSection === "allPosts" ? "active" : ""
+            }`}
+            onClick={() => setActiveSection("allPosts")}
+          >
+            All Posts
           </button>
           <button
             className={`nav-link ${activeSection === "upload" ? "active" : ""}`}
             onClick={() => setActiveSection("upload")}
           >
-            Upload Article
+            Upload Post
           </button>
         </nav>
 
@@ -124,8 +183,8 @@ const ArtistDashboard = () => {
         <div className="sidebar-bottom">
           <div className="profile-card">
             <div className="profile-info">
-              <div className="name">John Doe</div>
-              <div className="role">Artist</div>
+              <div className="name">{user.name}</div>
+              <div className="role">{user.role}</div>
             </div>
           </div>
           <button className="logout-btn" onClick={handleLogout}>
