@@ -11,6 +11,7 @@ import com.example.demo.repos.Customer_repo;
 
 @RestController
 @RequestMapping("/customer")
+@CrossOrigin(origins = "*")
 public class Customer_controller {
 
     @Autowired

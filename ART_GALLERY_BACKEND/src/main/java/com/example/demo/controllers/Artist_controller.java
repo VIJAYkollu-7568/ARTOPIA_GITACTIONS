@@ -12,6 +12,8 @@ import com.example.demo.repos.Artist_repo;
 
 @RestController
 @RequestMapping("/artist")
+@CrossOrigin(origins = "*")
+
 public class Artist_controller {
 
     @Autowired

@@ -13,6 +13,7 @@ function App() {
         <Route path="/artist-dashboard" element={<ArtistDashboard />} />
         <Route path="/customer-dashboard" element={<CustomerDashboard />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/dashboard" element={<ArtistDashboard />} />
       </Routes>
     </Router>
   );

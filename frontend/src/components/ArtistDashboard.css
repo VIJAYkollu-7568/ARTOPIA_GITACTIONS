@@ -1,277 +1,174 @@
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Ensure everything fills the screen */
-html,
-body,
-#root {
+/* ================== Admin Dashboard Layout ================== */
+.artist-dashboard {
+  display: flex;
   height: 100vh;
   width: 100vw;
   position: fixed;
-  width: 100%;
-  font-family: "Poppins", sans-serif;
-  background: #6483b1; /* unified with dashboard background */
-  overflow: hidden; /* prevent unexpected scroll causing white gaps */
-}
-/*fnfwiewh*/
-/* Dashboard Layout */
-.artist-dashboard {
-  display: flex;
-  position: fixed; /* cover full screen */
   top: 0;
   left: 0;
-  height: 100vh;
-  width: 100vw;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
 }
 
-/* Sidebar */
-/*tyqdwjqergdfghadfbn*/
+/* Sidebar (25%) */
 .sidebar {
-  width: 250px;
-  background: linear-gradient(180deg, #1f4037, #99f2c8);
-  color: #fff;
-  padding: 20px;
+  /* width: 15%; */
+  background: #1e293b;
+  color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  padding: 20px;
 }
 
-/* Sidebar Header */
 .sidebar h1 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 25px;
+  font-size: 1.5rem;
+  margin-bottom: 12 px;
   text-align: center;
 }
 
-.nav-links {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.nav-link {
+/* Navigation buttons */
+.sidebar button {
+  padding: 12px;
   background: transparent;
   border: none;
-  padding: 10px 12px;
+  text-align: left;
+  color: white;
   font-size: 1rem;
-  font-weight: 500;
-  color: #fff;
   cursor: pointer;
   border-radius: 6px;
-  text-align: left;
-  transition: 0.3s;
+  transition: background 0.2s ease-in-out;
+  margin-bottom: 6px; /* no big gaps */
 }
 
-.nav-link:hover,
-.nav-link.active {
-  background: rgba(255, 255, 255, 0.2);
-  transform: scale(1.03);
+.sidebar button:hover {
+  background: #334155;
 }
 
-/* Sidebar Bottom */
-.sidebar-bottom {
-  margin-top: 20px;
-}
-
-.profile-card {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 12px;
-  border-radius: 10px;
-  margin-bottom: 12px;
-}
-
-.profile-info .name {
+.sidebar button.active {
+  background: #475569;
   font-weight: bold;
-  font-size: 14px;
 }
 
-.profile-info .role {
-  font-size: 12px;
-  color: #f1f1f1;
-}
-
+/* Logout Button */
 .logout-btn {
+  margin-top: auto;
   width: 100%;
-  background: #e74c3c;
-  border: none;
   padding: 12px;
-  font-size: 16px;
-  font-weight: 600;
+  border: none;
+  background: #ef4444;
   color: white;
   cursor: pointer;
-  border-radius: 8px;
-  transition: background 0.2s, transform 0.2s;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background 0.2s ease-in-out;
 }
 
 .logout-btn:hover {
-  background: #c0392b;
-  transform: scale(1.03);
+  background: #dc2626;
 }
 
-/* Main Dashboard Area */
+/* ================== Main Content ================== */
 .dashboard-main {
   flex: 1;
-  padding: 25px;
+  padding: 15px;
   overflow-y: auto;
-  background: #f4f6f9;
-  height: 100%;
+  background: #94acc2;
 }
 
-.dashboard-main h2 {
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-/* My Articles Section */
-.articles-grid {
+/* ================== Arts Grid & Cards ================== */
+.arts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.article-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 18px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-
-.article-card:hover {
-  transform: translateY(-5px);
-}
-
-.article-card h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #0077b6;
-}
-
-.article-card p {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 12px;
-}
-
-/* Article Actions */
-.article-actions {
-  display: flex;
-  gap: 10px;
-}
-
-.edit-btn,
-.delete-btn {
-  flex: 1;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 6px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.edit-btn {
-  background: #0077b6;
-  color: #fff;
-}
-
-.edit-btn:hover {
-  background: #023e8a;
-}
-
-.delete-btn {
-  background: #e74c3c;
-  color: #fff;
-}
-
-.delete-btn:hover {
-  background: #c0392b;
-}
-
-/* Upload Form Section */
-.upload-form {
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 15px;
-  max-width: 500px;
 }
 
-.upload-form input,
-.upload-form textarea {
-  padding: 12px 14px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  font-family: "Poppins", sans-serif;
-  resize: none;
-  outline: none;
-  transition: border 0.2s;
-}
-
-.upload-form input:focus,
-.upload-form textarea:focus {
-  border: 1px solid #0077b6;
-}
-
-.upload-btn {
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background: #27ae60;
-  color: #fff;
-  font-weight: 600;
+.art-card {
+  background: #a75d5d;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
 }
 
-.upload-btn:hover {
-  background: #219150;
-  transform: scale(1.03);
+.art-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Profile Section */
-.profile-section {
-  max-width: 400px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.art-card img {
+  width: 100%;
+  height: 150px; /* square-shaped */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
 }
 
-.profile-section h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #0077b6;
-  margin-bottom: 12px;
-}
-
-.profile-section p {
+.art-card h3 {
   font-size: 1rem;
-  margin: 6px 0;
-  color: #333;
+  margin: 4px 0;
+  color: #111827; /* Black text */
 }
 
-/* Scrollbar Styling */
-.dashboard-main::-webkit-scrollbar {
-  width: 8px;
+.art-card .small-text {
+  font-size: 0.8rem;
+  color: #02070f; /* Dark grey */
+  margin: 2px 0;
 }
 
-.dashboard-main::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 6px;
+/* ================== Buttons inside card ================== */
+.card-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  justify-content: center;
 }
 
-.dashboard-main::-webkit-scrollbar-thumb:hover {
-  background: #999;
+.card-buttons button {
+  padding: 5px 8px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.card-buttons button:first-child {
+  background: #22c55e;
+  color: #080606;
+}
+
+.card-buttons button:last-child {
+  background: #ef4444;
+  color: #fff;
+}
+
+/* ================== Modal ================== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #819ba3;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+}
+
+.modal-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
