@@ -350,7 +350,7 @@ const AdminDashboard = () => {
             className={`nav-link ${activeSection === "upload" ? "active" : ""}`}
             onClick={() => setActiveSection("upload")}
           >
-            Upload Post
+            {/* Upload Post */}
           </button>
         </nav>
 

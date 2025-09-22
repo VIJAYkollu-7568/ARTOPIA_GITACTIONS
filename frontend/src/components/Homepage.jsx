@@ -43,8 +43,9 @@ const Homepage = () => {
         const loggedUser = {
           email: loginUsername,
           role: loginType,
+          name: loginUsername.split("@")[0], // simple name from email
         };
-        localStorage.setItem("admin", JSON.stringify(loggedUser));
+        localStorage.setItem("user", JSON.stringify(loggedUser));
 
         // Redirect based on role
         if (loginType === "customer") navigate("/customer-dashboard");

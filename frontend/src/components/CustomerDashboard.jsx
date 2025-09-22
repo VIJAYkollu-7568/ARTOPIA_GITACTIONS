@@ -1,109 +1,192 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaUserCircle, FaSignOutAlt } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";  // ✅ Import useNavigate
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./CustomerDashboard.css";
 
-const artworks = [
-  { id: 1, title: "Sunset Bliss", description: "A vibrant painting capturing the beauty of a sunset.", price: "$120", artist: "Alice Johnson", category: "acrylic", image: "https://picsum.photos/id/1015/400/250" },
-  { id: 2, title: "Village Harmony", description: "Traditional art showcasing village life in harmony with nature.", price: "$200", artist: "Rajesh Kumar", category: "historical", image: "https://picsum.photos/id/1025/400/250" },
-  { id: 3, title: "Abstract Dreams", description: "A bold abstract piece with splashes of imagination.", price: "$180", artist: "Sophia Brown", category: "painting", image: "https://picsum.photos/id/1035/400/250" },
-  { id: 4, title: "Ancient Tales", description: "Historical artwork depicting cultural heritage.", price: "$300", artist: "Anita Sharma", category: "historical", image: "https://picsum.photos/id/1045/400/250" },
-  { id: 5, title: "Color Splash", description: "Acrylic artwork with bold and vibrant colors.", price: "$220", artist: "Michael Lee", category: "acrylic", image: "https://picsum.photos/id/1055/400/250" },
-];
-
 const CustomerDashboard = () => {
-  const [activeSection, setActiveSection] = useState("explore");
-  const [selectedArtwork, setSelectedArtwork] = useState(null);
-  const navigate = useNavigate(); // ✅ initialize navigate
+  const [activeSection, setActiveSection] = useState("posts");
+  const [arts, setArts] = useState([]);
+  const [selectedArt, setSelectedArt] = useState(null);
+  const [profile, setProfile] = useState(null);
+  const [showProfile, setShowProfile] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editUsername, setEditUsername] = useState("");
+  const [cartItems, setCartItems] = useState([]);
 
-  // Simulating logged-in user info
-  const [profile] = useState({
-    name: "Alice Smith",
-    role: "Art Collector",
-    email: "alice@example.com",
-    image: null,
-  });
+  const navigate = useNavigate();
 
-  // ✅ Logout function
-  const handleLogout = () => {
-    // Clear any user session/auth here if needed
-    navigate("/"); // Redirect to homepage
+  // Load profile from localStorage
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) setProfile(JSON.parse(storedUser));
+  }, []);
+
+  // Fetch arts and cart items
+  useEffect(() => {
+    if (activeSection === "posts") {
+      axios
+        .get("http://localhost:5000/api/art/all")
+        .then((res) => setArts(res.data))
+        .catch((err) => console.error("Error fetching arts:", err));
+    }
+    if (activeSection === "cart") {
+      fetchCartItems();
+    }
+  }, [activeSection]);
+
+  const fetchCartItems = () => {
+    axios
+      .get("http://localhost:5000/api/cart/all")
+      .then((res) => setCartItems(res.data))
+      .catch((err) => console.error("Error fetching cart items:", err));
   };
 
-  // Explore / Category Page
-  const renderExplore = () => {
-    let filteredArtworks = artworks;
-    if (activeSection !== "explore") {
-      filteredArtworks = artworks.filter((art) => art.category === activeSection);
-    }
+  // Logout
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    navigate("/");
+  };
 
-    if (selectedArtwork) {
+  // Save edited username
+  const handleSaveUsername = () => {
+    const updatedProfile = { ...profile, username: editUsername };
+    setProfile(updatedProfile);
+    localStorage.setItem("user", JSON.stringify(updatedProfile));
+    setIsEditing(false);
+    setShowProfile(false);
+  };
+
+  // Add art to cart
+  const handleAddToCart = async (art) => {
+    try {
+      const formData = new FormData();
+      formData.append("artName", art.artName);
+      formData.append("artDescription", art.artDescription);
+      formData.append("artistName", art.artistName);
+      formData.append("artCost", art.artCost);
+      const imageResponse = await axios.get(
+        `http://localhost:5000/api/art/${art.id}/image`,
+        { responseType: "blob" }
+      );
+      formData.append(
+        "artPicture",
+        new File([imageResponse.data], "image.jpg")
+      );
+
+      await axios.post("http://localhost:5000/api/cart/add", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      alert("Added to cart!");
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+      alert("Failed to add to cart.");
+    }
+  };
+
+  // Delete cart item
+  const handleDeleteCartItem = async (id) => {
+    try {
+      await axios.delete(`http://localhost:5000/api/cart/delete/${id}`);
+      fetchCartItems(); // refresh cart
+      alert("Item removed from cart.");
+    } catch (error) {
+      console.error("Error deleting cart item:", error);
+      alert("Failed to remove item.");
+    }
+  };
+
+  // Render posts
+  const renderPosts = () => {
+    if (selectedArt) {
       return (
         <div className="artwork-detail">
-          <img src={selectedArtwork.image} alt={selectedArtwork.title} className="detail-img" />
-          <h2>{selectedArtwork.title}</h2>
-          <p>{selectedArtwork.description}</p>
-          <p><strong>Artist:</strong> {selectedArtwork.artist}</p>
-          <p><strong>Price:</strong> {selectedArtwork.price}</p>
-          <button className="cart-btn" onClick={() => alert("Added to cart!")}>Add to Cart</button>
-          <button className="back-btn" onClick={() => setSelectedArtwork(null)}>Back</button>
+          <img
+            src={`http://localhost:5000/api/art/${selectedArt.id}/image`}
+            alt={selectedArt.artName}
+            className="detail-img"
+          />
+          <h2>{selectedArt.artName}</h2>
+          <p>{selectedArt.artDescription}</p>
+          <p>
+            <strong>Artist:</strong> {selectedArt.artistName}
+          </p>
+          <p>
+            <strong>Price:</strong> ${selectedArt.artCost}
+          </p>
+          <button
+            className="cart-btn"
+            onClick={() => handleAddToCart(selectedArt)}
+          >
+            Add to Cart
+          </button>
+          <button className="back-btn" onClick={() => setSelectedArt(null)}>
+            Back
+          </button>
         </div>
       );
     }
 
     return (
-      <>
-        <h2 className="section-title">
-          {activeSection === "explore"
-            ? "Explore All Arts"
-            : `${activeSection.charAt(0).toUpperCase() + activeSection.slice(1)} Arts`}
-        </h2>
+      <div className="posts-page">
+        <h2 className="section-title">All Posts</h2>
         <div className="artworks-grid">
-          {filteredArtworks.length > 0 ? (
-            filteredArtworks.map((art) => (
-              <div key={art.id} className="art-card" onClick={() => setSelectedArtwork(art)}>
-                <img src={art.image} alt={art.title} />
-                <h3>{art.title}</h3>
-                <p>{art.artist}</p>
-                <p>{art.price}</p>
+          {arts.length > 0 ? (
+            arts.map((art) => (
+              <div
+                key={art.id}
+                className="art-card"
+                onClick={() => setSelectedArt(art)}
+              >
+                <img
+                  src={`http://localhost:5000/api/art/${art.id}/image`}
+                  alt={art.artName}
+                />
+                <h3>{art.artName}</h3>
+                <p>{art.artistName}</p>
+                <p>${art.artCost}</p>
               </div>
             ))
           ) : (
-            <p>No artworks available in this category.</p>
+            <p>No artworks available.</p>
           )}
         </div>
-      </>
+      </div>
     );
   };
 
-  const renderCart = () => (
-    <div className="cart-page">
-      <h2 className="section-title">My Cart</h2>
-      <p>Your cart is currently empty.</p>
-    </div>
-  );
-
-  const renderOrders = () => (
-    <div className="orders-page">
-      <h2 className="section-title">My Orders</h2>
-      <p>You don’t have any orders yet.</p>
-    </div>
-  );
-
-  const renderSection = () => {
-    switch (activeSection) {
-      case "explore":
-      case "historical":
-      case "acrylic":
-      case "painting":
-        return renderExplore();
-      case "cart":
-        return renderCart();
-      case "orders":
-        return renderOrders();
-      default:
-        return <p>Select a section from the sidebar.</p>;
-    }
+  // Render cart
+  const renderCart = () => {
+    return (
+      <div className="cart-page">
+        <h2 className="section-title">My Cart</h2>
+        <div className="artworks-grid">
+          {cartItems.length > 0 ? (
+            cartItems.map((item) => (
+              <div key={item.id} className="art-card">
+                <img
+                  src={`http://localhost:5000/api/cart/${item.id}/image`}
+                  alt={item.artName}
+                />
+                <h3>{item.artName}</h3>
+                <p>{item.artistName}</p>
+                <p>${item.artCost}</p>
+                <p>{item.artDescription}</p>
+                <button
+                  className="delete-btn"
+                  onClick={() => handleDeleteCartItem(item.id)}
+                >
+                  Delete
+                </button>
+              </div>
+            ))
+          ) : (
+            <p>No items in cart.</p>
+          )}
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -112,25 +195,43 @@ const CustomerDashboard = () => {
       <aside className="sidebar">
         <h1>Customer Dashboard</h1>
         <nav className="nav-links">
-          <button className={`nav-link ${activeSection === "explore" ? "active" : ""}`} onClick={() => { setActiveSection("explore"); setSelectedArtwork(null); }}>Explore All Arts</button>
-          <button className={`nav-link ${activeSection === "historical" ? "active" : ""}`} onClick={() => { setActiveSection("historical"); setSelectedArtwork(null); }}>Historical Arts</button>
-          <button className={`nav-link ${activeSection === "acrylic" ? "active" : ""}`} onClick={() => { setActiveSection("acrylic"); setSelectedArtwork(null); }}>Acrylic Arts</button>
-          <button className={`nav-link ${activeSection === "painting" ? "active" : ""}`} onClick={() => { setActiveSection("painting"); setSelectedArtwork(null); }}>Paintings</button>
-          <button className={`nav-link ${activeSection === "cart" ? "active" : ""}`} onClick={() => { setActiveSection("cart"); setSelectedArtwork(null); }}>My Cart</button>
-          <button className={`nav-link ${activeSection === "orders" ? "active" : ""}`} onClick={() => { setActiveSection("orders"); setSelectedArtwork(null); }}>My Orders</button>
+          <button
+            className={`nav-link ${activeSection === "posts" ? "active" : ""}`}
+            onClick={() => {
+              setActiveSection("posts");
+              setSelectedArt(null);
+            }}
+          >
+            Posts
+          </button>
+          <button
+            className={`nav-link ${activeSection === "cart" ? "active" : ""}`}
+            onClick={() => setActiveSection("cart")}
+          >
+            My Cart
+          </button>
         </nav>
 
-        {/* Bottom Profile + Logout */}
+        {/* Sidebar Profile */}
         <div className="sidebar-bottom">
-          <div className="profile-card">
-            {profile.image ? (
-              <img src={profile.image} alt="Profile" className="profile-avatar" />
+          <div
+            className="profile-card"
+            onClick={() => setShowProfile(true)}
+            style={{ cursor: "pointer" }}
+          >
+            {profile?.image ? (
+              <img
+                src={profile.image}
+                alt="Profile"
+                className="profile-avatar"
+              />
             ) : (
               <FaUserCircle size={40} />
             )}
             <div className="profile-info">
-              <p className="name">{profile.name}</p>
-              <p className="role">{profile.role}</p>
+              <p className="name">{profile?.username || "Guest"}</p>
+              <p className="role">{profile?.role || "Unknown Role"}</p>
+              <p className="email">{profile?.email}</p>
             </div>
           </div>
           <button className="logout-btn" onClick={handleLogout}>
@@ -141,7 +242,54 @@ const CustomerDashboard = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="dashboard-main">{renderSection()}</main>
+      <main className="dashboard-main">
+        {activeSection === "posts" && renderPosts()}
+        {activeSection === "cart" && renderCart()}
+      </main>
+
+      {/* Profile Popup */}
+      {showProfile && profile && (
+        <div className="popup-overlay">
+          <div className="popup-card">
+            <h2>Profile</h2>
+            <p>
+              <strong>Email:</strong> {profile.email}
+            </p>
+            <p>
+              <strong>Role:</strong> {profile.role}
+            </p>
+            <p>
+              <strong>Username:</strong>{" "}
+              {isEditing ? (
+                <>
+                  <input
+                    type="text"
+                    value={editUsername}
+                    onChange={(e) => setEditUsername(e.target.value)}
+                  />
+                  <button onClick={handleSaveUsername}>Save</button>
+                  <button onClick={() => setIsEditing(false)}>Cancel</button>
+                </>
+              ) : (
+                <>
+                  {profile.username}{" "}
+                  <button
+                    onClick={() => {
+                      setEditUsername(profile.username);
+                      setIsEditing(true);
+                    }}
+                  >
+                    Edit
+                  </button>
+                </>
+              )}
+            </p>
+            <div className="btn-row">
+              <button onClick={() => setShowProfile(false)}>Close</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
