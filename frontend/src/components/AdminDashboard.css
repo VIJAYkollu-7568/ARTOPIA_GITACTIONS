@@ -1,18 +1,19 @@
-/* Admin Dashboard Layout */
-.admin-dashboard {
+/* ================== Artist Dashboard Layout ================== */
+.artist-dashboard {
   display: flex;
   height: 100vh;
   width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   overflow: hidden;
+  background: #6483b1; /* unified background */
 }
 
-/* Sidebar (30%) */
+/* ================== Sidebar ================== */
 .sidebar {
-  width: 30%;
+  width: 25%;
   background: #1e293b;
   color: white;
   display: flex;
@@ -23,8 +24,10 @@
 .sidebar h1 {
   font-size: 1.5rem;
   margin-bottom: 20px;
+  text-align: center;
 }
 
+/* Navigation */
 .nav-links {
   display: flex;
   flex-direction: column;
@@ -32,14 +35,14 @@
 }
 
 .nav-link {
-  padding: 10px;
-  background: transparent;
+  padding: 12px;
   border: none;
+  background: transparent;
   text-align: left;
-  color: white;
   font-size: 1rem;
+  color: white;
+  border-radius: 6px;
   cursor: pointer;
-  border-radius: 5px;
   transition: background 0.2s ease-in-out;
 }
 
@@ -52,7 +55,7 @@
   font-weight: bold;
 }
 
-/* Profile + Logout Section */
+/* Sidebar bottom (profile + logout) */
 .sidebar-bottom {
   margin-top: auto;
 }
@@ -60,11 +63,8 @@
 .profile-card {
   display: flex;
   align-items: center;
+  gap: 10px;
   margin-bottom: 10px;
-}
-
-.profile-info {
-  margin-left: 10px;
 }
 
 .profile-info .name {
@@ -78,13 +78,13 @@
 
 .logout-btn {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: none;
   background: #ef4444;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
+  color: #fff;
   font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
   transition: background 0.2s ease-in-out;
 }
 
@@ -92,246 +92,22 @@
   background: #dc2626;
 }
 
-/* Main Content (70%) */
+/* ================== Main Content ================== */
 .dashboard-main {
-  flex: 1; /* Takes the remaining 70% automatically */
+  flex: 1;
   padding: 20px;
   overflow-y: auto;
-  background: #f1f5f9;
+  background: #94acc2;
 }
 
-.articles-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 15px;
+.dashboard-main h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.article-card {
-  padding: 15px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-}
-
-/* Upload Form */
-.upload-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.upload-form input,
-.upload-form textarea {
-  padding: 10px;
-  border: 1px solid #cbd5e1;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-.upload-btn {
-  padding: 10px;
-  background: #2563eb;
-  border: none;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: background 0.2s ease-in-out;
-}
-
-.upload-btn:hover {
-  background: #1d4ed8;
-}
-.customers-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
-  background: rgb(59, 75, 117);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.customers-table th,
-.customers-table td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #0c1e35;
-}
-
-.customers-table th {
-  background: #1e293b;
-  color: rgb(12, 120, 10);
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.customers-table tr:hover {
-  background: #00b691;
-}
-
-.delete-btn {
-  padding: 6px 12px;
-  background: #ef4444;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background 0.2s ease-in-out;
-}
-
-.delete-btn:hover {
-  background: #dc2626;
-}
-
-/* Shared entity table (customers/admins) */
-.entity-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 12px;
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-}
-.entity-table th,
-.entity-table td {
-  padding: 12px 14px;
-  text-align: left;
-  border-bottom: 1px solid #e6eef6;
-}
-.entity-table th {
-  background: #1e293b;
-  color: #fff;
-  font-weight: 600;
-}
-.entity-table tr:hover {
-  background: #fcfcfd;
-}
-.delete-btn {
-  padding: 6px 10px;
-  background: #ef4444;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.delete-btn:hover {
-  background: #dc2626;
-}
-
-/* Popup overlay & card */
-.popup-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1200;
-}
-.popup-card {
-  width: 420px;
-  max-width: 92%;
-  background: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-.popup-card h2 {
-  margin-top: 0;
-  margin-bottom: 12px;
-}
-.popup-card input,
-.popup-card select,
-.popup-card textarea {
-  width: 100%;
-  padding: 10px 12px;
-  margin: 8px 0;
-  border: 1px solid #d6e2ef;
-  border-radius: 6px;
-  font-size: 0.95rem;
-}
-
-/* password wrapper (eye icon) */
-.password-wrapper {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-.password-wrapper .eye-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* buttons */
-.btn-row {
-  display: flex;
-  gap: 10px;
-  margin-top: 12px;
-}
-.primary-btn {
-  padding: 8px 12px;
-  background: #2563eb;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.secondary-btn {
-  padding: 8px 12px;
-  background: #f1f5f9;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.close-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 1.1rem;
-}
-
-/* sidebar bottom / profile card */
-.sidebar-bottom {
-  margin-top: auto;
-}
-.profile-card {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-.profile-info .name {
-  font-weight: 700;
-}
-.profile-info .role {
-  font-size: 0.9rem;
-  color: #94a3b8;
-}
-.logout-btn {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  background: #ef4444;
-  color: #fff;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.logout-btn:hover {
-  background: #dc2626;
-}
-/* ====== Add Customer & Add Artist Forms ====== */
+/* ================== Upload Form (for Artists) ================== */
 .upload-form {
   display: flex;
   flex-direction: column;
@@ -381,10 +157,72 @@
   background: #357abd;
 }
 
-/* Section heading */
-.dashboard-main h2 {
+/* ================== Arts Grid & Cards ================== */
+.arts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.art-card {
+  background: #a75d5d;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 12px;
   text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.art-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.art-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.art-card h3 {
+  font-size: 1rem;
+  margin: 4px 0;
+  color: #111827;
+}
+
+.art-card .small-text {
+  font-size: 0.85rem;
+  margin: 2px 0;
+  color: #02070f;
+}
+
+/* ================== Modal ================== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  background: #819ba3;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }

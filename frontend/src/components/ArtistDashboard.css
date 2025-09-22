@@ -1,19 +1,17 @@
-
-html, body, #root {
-   height: 100vh;
+/* ================== Global Reset ================== */
+html,
+body,
+#root {
+  height: 100vh;
   width: 100vw;
-   
   position: fixed;
-  width: 100%;
   font-family: "Poppins", sans-serif;
   background: #6483b1; /* unified with dashboard background */
-  overflow: hidden; /* prevent unexpected scroll causing white gaps */
+  overflow: hidden; /* prevent scroll causing white gaps */
 }
 
-
-/* Sidebar (25%) */
+/* ================== Sidebar ================== */
 .sidebar {
-  /* width: 15%; */
   background: #1e293b;
   color: white;
   display: flex;
@@ -23,22 +21,23 @@ html, body, #root {
 
 .sidebar h1 {
   font-size: 1.5rem;
-  margin-bottom: 12 px;
+  margin-bottom: 12px;
   text-align: center;
 }
 
-/* Navigation buttons */
+/* Sidebar Navigation Buttons */
 .sidebar button {
+  width: 100%;
   padding: 12px;
-  background: transparent;
+  margin-bottom: 6px;
   border: none;
-  text-align: left;
+  border-radius: 6px;
+  background: transparent;
   color: white;
   font-size: 1rem;
+  text-align: left;
   cursor: pointer;
-  border-radius: 6px;
   transition: background 0.2s ease-in-out;
-  margin-bottom: 6px; /* no big gaps */
 }
 
 .sidebar button:hover {
@@ -56,11 +55,11 @@ html, body, #root {
   width: 100%;
   padding: 12px;
   border: none;
+  border-radius: 6px;
   background: #ef4444;
   color: white;
-  cursor: pointer;
-  border-radius: 6px;
   font-size: 1rem;
+  cursor: pointer;
   transition: background 0.2s ease-in-out;
 }
 
@@ -68,7 +67,7 @@ html, body, #root {
   background: #dc2626;
 }
 
-/* ================== Main Content ================== */
+/* ================== Dashboard Main ================== */
 .dashboard-main {
   flex: 1;
   padding: 15px;
@@ -89,8 +88,8 @@ html, body, #root {
   border-radius: 10px;
   padding: 10px;
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .art-card:hover {
@@ -100,7 +99,7 @@ html, body, #root {
 
 .art-card img {
   width: 100%;
-  height: 150px; /* square-shaped */
+  height: 150px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 8px;
@@ -109,36 +108,38 @@ html, body, #root {
 .art-card h3 {
   font-size: 1rem;
   margin: 4px 0;
-  color: #111827; /* Black text */
+  color: #111827;
 }
 
 .art-card .small-text {
   font-size: 0.8rem;
-  color: #02070f; /* Dark grey */
   margin: 2px 0;
+  color: #02070f;
 }
 
-/* ================== Buttons inside card ================== */
+/* ================== Card Buttons ================== */
 .card-buttons {
   display: flex;
+  justify-content: center;
   gap: 8px;
   margin-top: 6px;
-  justify-content: center;
 }
 
 .card-buttons button {
   padding: 5px 8px;
   font-size: 0.75rem;
-  cursor: pointer;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
 }
 
+/* First button (Add) */
 .card-buttons button:first-child {
   background: #22c55e;
   color: #080606;
 }
 
+/* Second button (Delete) */
 .card-buttons button:last-child {
   background: #ef4444;
   color: #fff;
@@ -158,11 +159,11 @@ html, body, #root {
 }
 
 .modal-content {
-  background: #819ba3;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 500px;
   width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  background: #819ba3;
+  border-radius: 8px;
   text-align: center;
 }
 
@@ -172,4 +173,4 @@ html, body, #root {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
-} 
+}
