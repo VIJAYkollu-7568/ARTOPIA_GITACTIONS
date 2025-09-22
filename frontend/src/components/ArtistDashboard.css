@@ -1,14 +1,15 @@
-/* ================== Admin Dashboard Layout ================== */
-.artist-dashboard {
-  display: flex;
-  height: 100vh;
+
+html, body, #root {
+   height: 100vh;
   width: 100vw;
+   
   position: fixed;
-  top: 0;
-  left: 0;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  background: #6483b1; /* unified with dashboard background */
+  overflow: hidden; /* prevent unexpected scroll causing white gaps */
 }
+
 
 /* Sidebar (25%) */
 .sidebar {
@@ -171,4 +172,4 @@
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
-}
+} 
