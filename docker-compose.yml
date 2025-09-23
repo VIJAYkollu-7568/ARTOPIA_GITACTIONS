@@ -13,7 +13,7 @@ services:
       - artgallery-net
 
   backend:
-    image: vijay32991/ART_GALLERY_BACKEND:latest
+    image: vijay32991/artopia-docker-backend:latest
     container_name: artgallery-backend
     ports:
       - "5000:5000"
@@ -24,7 +24,7 @@ services:
       - artgallery-net
 
   frontend:
-    image: vijay32991/artgallery-frontend:latest
+    image: vijay32991/artopia-docker-frontend:latest
     container_name: artgallery-frontend
     ports:
       - "3002:80"
