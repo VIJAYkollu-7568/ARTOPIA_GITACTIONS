@@ -3,39 +3,39 @@ services:
     image: mysql:8
     container_name: mysql-db
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: klustudentdb
+      MYSQL_ROOT_PASSWORD: VIJAY2005
+      MYSQL_DATABASE: artgallery
     ports:
       - "3309:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
-      - springboot-mysql-net
+      - artgallery-net
 
   backend:
-    image: vijay32991/docker-backend:latest
-    container_name: springboot
+    image: vijay32991/ART_GALLERY_BACKEND:latest
+    container_name: artgallery-backend
     ports:
-      - "2025:5000"
+      - "5000:5000"
     depends_on:
       - mysqldb
     restart: on-failure
     networks:
-      - springboot-mysql-net
+      - artgallery-net
 
   frontend:
-    image: vijay32991/docker-frontend:latest
-    container_name: react
+    image: vijay32991/frontend:latest
+    container_name: artgallery-frontend
     ports:
       - "3002:80"
     depends_on:
       - backend
     restart: on-failure
     networks:
-      - springboot-mysql-net
+      - artgallery-net
 
 volumes:
   mysql_data:
 
 networks:
-  springboot-mysql-net:
+  artgallery-net:
