@@ -24,7 +24,7 @@ services:
       - artgallery-net
 
   frontend:
-    image: vijay32991/frontend:latest
+    image: vijay32991/artgallery-frontend:latest
     container_name: artgallery-frontend
     ports:
       - "3002:80"
