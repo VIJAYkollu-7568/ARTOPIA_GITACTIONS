@@ -1,25 +1,21 @@
-# Stage 1: Build the Spring Boot application using Maven
-FROM maven:3.9.3-eclipse-temurin-21 AS builder
-
+# Stage 1: Build Spring Boot app
+FROM eclipse-temurin:21-jdk AS builder
 WORKDIR /app
 
-# Copy Maven config files and source code
+COPY mvnw .
+COPY .mvn/ .mvn
 COPY pom.xml .
 COPY src ./src
 
-# Package the application without running tests
-RUN mvn clean package -DskipTests
+RUN chmod +x mvnw && ./mvnw clean package -DskipTests
 
-# Stage 2: Create the runtime image with JRE only
-FROM eclipse-temurin:21-jre
+RUN cp target/*.jar app.jar
 
+# Stage 2: Run Spring Boot app
+FROM eclipse-temurin:21-jdk
 WORKDIR /app
 
-# Copy the jar built in the previous stage
-COPY --from=builder /app/target/ART_GALLERY-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=builder /app/app.jar app.jar
 
-# Expose your backend port (adjust if needed)
-EXPOSE 5000
-
-# Run the application
+EXPOSE 2000
 ENTRYPOINT ["java", "-jar", "app.jar"]
